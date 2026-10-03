@@ -1,0 +1,11 @@
+packages:
+  - '.'
+
+# Compatibility with Slidev's Comark adapter and code-tooltip helper.
+overrides:
+  markdown-it: 14.1.1
+  floating-vue: 5.2.2
+
+# Install the Chromium browser explicitly with `pnpm exec playwright install chromium`.
+ignoredBuiltDependencies:
+  - playwright-chromium

@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.slidev/
+.cache/
+output/slides/
+output/qa/
+*.log
