@@ -40,6 +40,14 @@ The static presentation is written to `dist/`. Serve it through an HTTP server; 
 
 Run `pnpm preview` to serve the built deck at <http://127.0.0.1:3031> without starting the Slidev development server.
 
+## Host on Vercel
+
+Import this presentation repository as a Vercel project. Keep the project root at the repository root and use Node.js 24.x in the Vercel project settings. `vercel.json` sets the frozen pnpm install, Slidev build, `dist/` output, and a fallback route so direct slide and presenter links load after a refresh. The `packageManager` field pins the pnpm version.
+
+The site is an interactive Slidev presentation: arrow keys and Space navigate slides, and `/presenter/1` opens presenter mode with speaking notes. These notes are included in the public build, so review them before sharing the Vercel URL. No environment variables or server functions are required for the presentation itself.
+
+After deployment, open `/1`, refresh a direct link such as `/14`, navigate between slides, and open `/presenter/1` to check the presenter view. The Vercel build serves the Slidev site; the separate ResourceHive application linked in the slides keeps its own hosting.
+
 The PDF fallback is `output/resourcehive-technical-evaluation.pdf`. PNG slide images are written under `output/slides/`.
 
 PDF and PNG export use Playwright Chromium. If its browser is missing, run:
